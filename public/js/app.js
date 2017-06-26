@@ -14,11 +14,11 @@ function getUrlVars()
 var copy = {
     vardcentral: {
         introtitle: 'Vill du lägga ner<br>517 av Sveriges<br>vårdcentraler?',
-        introbody: '42% av Sveriges vårdcentraler drivs idag i privat regi. Men nu hotar ett politiskt förslag deras överlevnad. Blir förslaget verklighet innebär det inte bara att det blir längre till din närmsta vårdcentral. Vårdköerna kommer också att bli längre och din valfrihet kommer att minska.',
+        introbody: '42% av Sveriges vårdcentraler drivs idag i privat regi. Men nu hotar ett politiskt förslag deras överlevnad. Blir förslaget verklighet innebär det inte bara att det blir längre till din närmsta vårdcentral. Vårdköerna kommer också att bli längre och din valfrihet kommer att minska.<br>Vill du det?',
         yestitle: 'Tråkigt att du<br>känner dig missnöjd<br>med den privata<br>vården!',
-        yesbody: 'Läs mer om hur din vård och omsorg kan<br>komma att drabbas och visa ditt stöd på<br><a href="http://www.dinvalfard.se">dinvalfard.se</a>',
+        yesbody: 'Läs mer om hur din vård och omsorg kan komma att drabbas av det politiska förslaget på <a href="http://www.dinvalfard.se">dinvalfard.se</a>',
         notitle: 'Tack för att du<br>hjälper till att rädda<br>välfärden!',
-        nobody: 'Läs mer om hur din vård och omsorg kan komma att drabbas av det politiska förslaget och visa ditt stöd på<br><a href="http://www.dinvalfard.se">dinvalfard.se</a>'
+        nobody: 'Läs mer om hur det ser ut för din vård och omsorg och visa ditt stöd på<br><a href="http://www.dinvalfard.se">dinvalfard.se</a>'
     },
     aldreboenden: {
         introtitle: 'Vill du lägga ner<br>517 av Sveriges<br>äldreboenden?',
