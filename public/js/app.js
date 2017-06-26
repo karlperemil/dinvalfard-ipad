@@ -39,6 +39,20 @@ var copy = {
 }
 
 $(document).ready(function(){
+    console.log(getUrlVars());
+    var nameKey = getUrlVars()['namn'];
+    console.log(nameKey);
+    var pageCopy = copy[nameKey];
+    console.log(pageCopy);
+
+    window.trackingName = nameKey;
+    $('#question h1').html(pageCopy.introtitle);
+    $('#question p').html(pageCopy.introbody);
+    $('#no h2').html(pageCopy.notitle);
+    $('#no p').html(pageCopy.nobody);
+    $('#yes h2').html(pageCopy.yestitle);
+    $('#yes p').html(pageCopy.yesbody);
+
     console.log('ready');
     $('.button-yes').click(function(){
         $('#question').hide();
@@ -46,7 +60,7 @@ $(document).ready(function(){
         reset();
         ga('send', {
             hitType: 'event',
-            eventCategory: 'Button',
+            eventCategory: trackingName,
             eventAction: 'Ja'
         });
     });
@@ -56,24 +70,10 @@ $(document).ready(function(){
         reset();
         ga('send', {
             hitType: 'event',
-            eventCategory: 'Button',
+            eventCategory: trackingName,
             eventAction: 'Nej'
         });
     });
-
-    console.log(getUrlVars());
-    var nameKey = getUrlVars()['namn'];
-    console.log(nameKey);
-    var pageCopy = copy[nameKey];
-    console.log(pageCopy);
-    $('#question h1').html(pageCopy.introtitle);
-    $('#question p').html(pageCopy.introbody);
-    $('#no h2').html(pageCopy.notitle);
-    $('#no p').html(pageCopy.nobody);
-    $('#yes h2').html(pageCopy.yestitle);
-    $('#yes p').html(pageCopy.yesbody);
-
-
 })
 
 function reset(){
@@ -82,7 +82,7 @@ function reset(){
         $('#no, #yes').hide();
         ga('send', {
             hitType: 'event',
-            eventCategory: 'Script',
+            eventCategory: trackingName,
             eventAction: 'reset page'
         });
     },20000);

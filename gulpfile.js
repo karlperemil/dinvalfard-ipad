@@ -70,10 +70,6 @@ gulp.task('browsersync', function() {
     
     // Watch .styl files
     gulp.watch('css/*.styl', ['styles']);
-
-    // Watch site-js files
-    gulp.watch('public/js/*.js', ['js']);
-
     /* compile jade
     gulp.watch(themePath+'/assets/pages/*.jade',['compile-jade']);
     */
@@ -85,9 +81,6 @@ gulp.task('watch', function() {
 
   // Watch .styl files
   gulp.watch('css/*.styl', ['styles']);
-
-  // Watch site-js files
-  gulp.watch('public/js/*.js', ['js']);
 
 }); 
 
