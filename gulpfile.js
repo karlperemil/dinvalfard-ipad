@@ -54,31 +54,12 @@ gulp.task('js-vendor', function() {
     .pipe(gulp.dest('public/js/vendor'))
 });
 
-// JSHint, concat, and minify JavaScript
-gulp.task('js', function() {
-  return gulp.src([	
-	  
-           // Grab your custom scripts
-          'js/*.js'
-  		  
-  ])
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('public/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(stripDebug())
-    .pipe(uglify())
-    .pipe(gulp.dest('public/js'))
-});
-
 // Browser-Sync watch files and inject changes
 gulp.task('browsersync', function() {
     // Watch files
     var files = [
     	'css/*.styl',
-    	'js/*.js',
+    	'public/js/*.js',
     	'public/images/**/*.{png,jpg,gif,svg,webp}'
     ];
 
@@ -91,7 +72,7 @@ gulp.task('browsersync', function() {
     gulp.watch('css/*.styl', ['styles']);
 
     // Watch site-js files
-    gulp.watch('js/*.js', ['js']);
+    gulp.watch('public/js/*.js', ['js']);
 
     /* compile jade
     gulp.watch(themePath+'/assets/pages/*.jade',['compile-jade']);
@@ -106,18 +87,18 @@ gulp.task('watch', function() {
   gulp.watch('css/*.styl', ['styles']);
 
   // Watch site-js files
-  gulp.watch('js/*.js', ['js']);
+  gulp.watch('public/js/*.js', ['js']);
 
 }); 
 
 // Run styles, site-js and foundation-js
 gulp.task('default', function(done){
-    runSequence('styles','js','js-vendor',function(){
+    runSequence('styles','js-vendor',function(){
         console.log('Done compiling base...');
         gulp.start('browsersync');
     });
 });
 
 gulp.task('build', function(){
-    gulp.start('styles','js-vendor','js');
+    gulp.start('styles','js-vendor');
 })
