@@ -1,2 +1,122 @@
+$orange = #FF8211
+$orangelight = #f5b175
+$pink = #e04387
+$pinklight = #ff70ae
+$pinkdark = #DD357E
+$purple = #612b89
+$purplelight = #b06cc5
+$green = #02D68C
+$greendark = #01BC7B
+
+$opensans = 'Open Sans', sans-serif;
+
+$imagepath = '../../assets/images/'
+
+body,html
+    background: $purple
+    margin: 0
+    padding: 0
+
+section
+    width: 100%
+    max-width: 80%
+    margin: auto
+    margin-top: 21rem
+
+body,html,h1,p
+    font-family: $opensans
+
+a
+    color: $pink
+    text-decoration: none
+    &:hover
+        color: $pinklight
+        text-decoration: none
 h1
-    color: red
+    color: $pink
+    font-size: 5rem
+    text-align: center
+    font-weight: 800
+    line-height: 1.2;
+
+h2
+    color: $pink
+    font-size: 4.3rem
+    text-align: center
+    font-weight: 800
+    line-height: 1.2
+
+p
+    font-size: 1.8rem
+    color: white
+    text-align: center
+    font-weight: 700
+    width: 87%;
+    margin: auto;
+
+#difference-logo
+    position: absolute
+    font-size: .7em;
+    top: .5rem
+    left: .5rem
+    width: 14.5em
+    height: 11.4em
+    background-size: 14.5em 11.4em
+    background-image: url('/images/difference-logo.png');
+
+.logo
+    width: 30.8em;
+    height: 32.8em;
+    position: absolute;
+    right: 0;
+    top: 1.1rem;
+    font-size: .7rem;
+    background-size: 32.8em 32.8em;
+    background-image: url('/images/logo-stamp.png');
+
+.button-holder
+    width: 86%;
+    margin: 4rem auto 0;
+    button
+        font-size: .7rem
+        margin: 0
+        padding: 0
+        width: 23.8em
+        height: 11.6em
+        background: none
+        border: none
+        outline: none
+        background-size: 23.8em 11.7em
+    .button-no
+        float: left
+        color: white
+        background-image: url('/images/no-button.png')
+        &:hover
+            background-image: url('/images/no-button-hover.png')
+    .button-yes
+        float: right
+        color: $purple
+        background-image: url('/images/yes-button.png')
+        &:hover
+            background-image: url('/images/yes-button-hover.png')
+
+#no
+    display: none
+    .logo
+        width: 32.8em;
+        height: 32.8em;
+        right: 4rem;
+        top: 7.3rem;
+        font-size: 0.5rem;
+#yes
+    display: none
+    .logo
+        width: 32.8em;
+        height: 32.8em;
+        right: 4rem;
+        top: 7.3rem;
+        font-size: 0.5rem;
+
+
+@media(min-width: 768px)
+    

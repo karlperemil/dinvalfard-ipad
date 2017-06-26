@@ -1,5 +1,45 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div#wrapper
+    div#difference-logo
+    section#question
+      div.logo
+      h1
+        | Vill du lägga ner
+        br
+        | 517 av Sveriges
+        br
+        | vårdcentraler?
+      p 42% av Sveriges vårdcentraler drivs idag i privat regi. Men nu hotar ett politiskt förslag deras överlevnad. Blir förslaget verklighet innebär det inte bara att det blir längre till din närmsta vårdcentral. Vårdköerna kommer också att bli längre och din valfrihet kommer att minska.
+      div.button-holder
+        button.button-no
+        button.button-yes
+    section#no.is-hidden
+      div.logo
+      h2
+        | Tack för att du
+        br
+        | hjälper till att rädda
+        br
+        | välfärden!
+      p
+        | Läs mer om hur din vård och omsorg kan komma att drabbas av det politiska förslaget och visa ditt stöd på
+        br
+        a(href="http://www.dinvalfard.se") dinvalfard.se
+    section#yes.is-hidden
+      div.logo
+      h2
+        | Tråkigt att du
+        br
+        | känner dig missnöjd
+        br
+        | med den privata
+        br
+        | vården!
+      p
+        | Läs mer om hur din vård och omsorg kan
+        br
+        | komma att drabbas och visa ditt stöd på
+        br
+        a(href="http://www.dinvalfard.se") dinvalfard.se
