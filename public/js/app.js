@@ -58,6 +58,7 @@ $(document).ready(function(){
         setTimeout(function(){
             $('#question').hide();
             $('#yes').show();
+            fixHoverState($('.button-yes')[0]);
             reset();
             ga('send', {
                 hitType: 'event',
@@ -70,6 +71,7 @@ $(document).ready(function(){
         setTimeout(function(){
             $('#question').hide();
             $('#no').show();
+            fixHoverState($('.button-no')[0]);
             reset();
             ga('send', {
                 hitType: 'event',
@@ -90,5 +92,13 @@ function reset(){
             eventCategory: trackingName,
             eventAction: 'reset page'
         });
-    },60000);
+    },7000);
+}
+
+function fixHoverState(el)
+{
+    var par = el.parentNode;
+    var next = el.nextSibling;
+    par.removeChild(el);
+    setTimeout(function() {par.insertBefore(el, next);}, 0)
 }
