@@ -54,6 +54,12 @@ $(document).ready(function(){
     $('#yes p').html(pageCopy.yesbody);
 
     console.log('ready');
+    $('.button-yes').bind('touchstart', function(){
+        $('.button-yes').addClass('is-hover');
+    })
+    $('.button-no').bind('touchstart', function(){
+        $('.button-no').addClass('is-hover');
+    })
     $('.button-yes').click(function(){
         setTimeout(function(){
             $('#question').hide();
@@ -86,7 +92,7 @@ function reset(){
     setTimeout(function(){
         $('#question').show();
         $('#no, #yes').hide();
-        $('.button-yes, .button-no').blur();
+        //$('.button-yes, .button-no').blur();
         ga('send', {
             hitType: 'event',
             eventCategory: trackingName,
@@ -97,8 +103,5 @@ function reset(){
 
 function fixHoverState(el)
 {
-    var par = el.parentNode;
-    var next = el.nextSibling;
-    par.removeChild(el);
-    setTimeout(function() {par.insertBefore(el, next);}, 0)
+    $(el).removeClass('is-hover');
 }
